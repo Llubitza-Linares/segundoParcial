@@ -9,7 +9,7 @@ public class Skype implements ICanalDeComunicacion {
 
     public void PersonaAlChat(Persona persona) {
 
-        personaChat.get(personaChat);
+        personaChat.get(persona);
     }
 
 
