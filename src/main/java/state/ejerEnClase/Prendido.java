@@ -1,19 +1,32 @@
 package state.ejerEnClase;
 
-import state.ejercicio.Computadora;
-import state.ejercicio.MemoriaRam;
+import java.util.Random;
 
 public class Prendido implements IComputadora{
-
-    public Prendido(){}
-
+    private int programas;
     @Override
     public void handler(Computadora computadora) {
-        System.out.println("** Estado: Prendido **");
-        computadora.setConsumoCpu(new ConsumoCpu(0,"apagado"));
-        computadora.setMemoriaRam(new MemoriaRam(0,"NAN"));
-        computadora.setProgramaAbierto();
-        computadora.setTimeLimit(0);
-        System.out.println("********");
+        System.out.println("** Estado: PRENDIDO **");
+        computadora.setProgramasAbiertos(abrir());
+        computadora.setConsumoEnCPU(computadora.getProgramasAbiertos().length*5);
+        computadora.setConsumoEnMemoriaRam(computadora.getProgramasAbiertos().length*5);
+        System.out.println("MEMORIA RAM:"+computadora.getConsumoEnMemoriaRam()+" %");
+        System.out.println("CONSUMO CPU:"+computadora.getConsumoEnCPU()+" %");
+        System.out.println("** PROGRAMAS ABIERTOS **");
+        for (int i=0;i<computadora.getProgramasAbiertos().length;i++){
+            System.out.println(" "+computadora.getProgramasAbiertos()[i]);
+
+        }
+
+    }
+
+    private String[] abrir() {
+        Random random=new Random();
+        programas =random.nextInt(20)+1;
+        String[] programa=new String[programas];
+        for (int i=0;i<programas;i++){
+            programa[i]="Programa"+(i+1);
+        }
+        return programa;
     }
 }

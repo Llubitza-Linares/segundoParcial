@@ -1,7 +1,5 @@
 package state.ejercicio;
 
-import state.ejerEnClase.ConsumoCpu;
-
 public class Computadora {
     private IStateComputadora state;
     private TarjetaVideo tarjetaVideo;

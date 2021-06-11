@@ -1,21 +1,16 @@
 package state.ejerEnClase;
 
-import state.ejercicio.Computadora;
-import state.ejercicio.MemoriaRam;;
-
-public class Apagado implements  IComputadora{
-
-    public Apagado(){
-
-    }
-
+public class Apagado implements IComputadora{
     @Override
     public void handler(Computadora computadora) {
         System.out.println("** Estado: Apagado **");
-        computadora.setConsumoCpu(new ConsumoCpu(0,"apagado"));
-        computadora.setMemoriaRam(new MemoriaRam(0,"NAN"));
-        computadora.setProgramaAbierto(new ProgramaAbierto("",));
-        computadora.setTimeLimit(0);
+        computadora.setConsumoEnMemoriaRam(0);
+        computadora.setConsumoEnCPU(0);
+        computadora.setProgramasAbiertos(new String[20]);
+        System.out.println("MEMORIA RAM:"+computadora.getConsumoEnMemoriaRam()+" %");
+        System.out.println("CONSUMO CPU:"+computadora.getConsumoEnCPU()+" %");
+        System.out.println("NINGUN PROGRAMA ABIERTO");
         System.out.println("********");
+
     }
 }

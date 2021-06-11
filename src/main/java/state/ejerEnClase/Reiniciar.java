@@ -1,19 +1,18 @@
 package state.ejerEnClase;
 
-import state.ejercicio.Computadora;
-import state.ejercicio.MemoriaRam;
-
 public class Reiniciar implements IComputadora{
-
-    public Reiniciar(){}
-
     @Override
     public void handler(Computadora computadora) {
-        System.out.println("** Estado: Reiniciando **");
-        computadora.setConsumoCpu(new ConsumoCpu(0, "apagado"));
-        computadora.setMemoriaRam(new MemoriaRam(0, "NAN"));
-        computadora.setProgramaAbierto();
-        computadora.setTimeLimit(0);
+        System.out.println("** Estado: REINICIO **");
+        System.out.println("MEMORIA RAM ANTES:"+computadora.getConsumoEnMemoriaRam()+" %");
+        System.out.println("CONSUMO CPU ANTES:"+computadora.getConsumoEnCPU()+" %");
+        computadora.setConsumoEnMemoriaRam(0);
+        computadora.setConsumoEnCPU(0);
+        computadora.setProgramasAbiertos(new String[20]);
+        System.out.println("MEMORIA RAM ACTUAL:"+computadora.getConsumoEnMemoriaRam()+" %");
+        System.out.println("CONSUMO CPU ACTUAL:"+computadora.getConsumoEnCPU()+" %");
+        System.out.println("LOS PROGRAMAS SE CERRARON");
         System.out.println("********");
+
     }
 }

@@ -2,10 +2,10 @@ package state.ejerEnClase;
 
 public class Computadora {
     private IComputadora state;
-    private ProgramaAbierto programaAbierto;
-    private ConsumoCpu consumoCpu;
-    private MemoriaRam memoriaRam;
-    private int timeLimit;
+    private String[] programasAbiertos=new String[20];
+    private int consumoEnMemoriaRam;
+    private int consumoEnCPU;
+
 
 
     public IComputadora getState() {
@@ -15,32 +15,31 @@ public class Computadora {
     public void setState(IComputadora state) {
         this.state = state;
     }
-
     public void request(){
         this.state.handler(this);
     }
 
-    public MemoriaRam getMemoriaRam() {
-        return memoriaRam;
+    public String[] getProgramasAbiertos() {
+        return programasAbiertos;
     }
 
-    public void setMemoriaRam(MemoriaRam memoriaRam) {
-        this.memoriaRam = memoriaRam;
+    public void setProgramasAbiertos(String[] programasAbiertos) {
+        this.programasAbiertos = programasAbiertos;
     }
 
-    public ProgramaAbierto getProgramaAbierto() {
-        return programaAbierto;
+    public int getConsumoEnMemoriaRam() {
+        return consumoEnMemoriaRam;
     }
 
-    public void setProgramaAbierto(ProgramaAbierto programaAbierto) {
-        this.programaAbierto = programaAbierto;
+    public void setConsumoEnMemoriaRam(int consumoEnMemoriaRam) {
+        this.consumoEnMemoriaRam = consumoEnMemoriaRam;
     }
 
-    public ConsumoCpu getConsumoCpu() {
-        return consumoCpu;
+    public int getConsumoEnCPU() {
+        return consumoEnCPU;
     }
 
-    public void setConsumoCpu(ConsumoCpu consumoCpu) {
-        this.consumoCpu = consumoCpu;
+    public void setConsumoEnCPU(int consumoEnCPU) {
+        this.consumoEnCPU = consumoEnCPU;
     }
 }
