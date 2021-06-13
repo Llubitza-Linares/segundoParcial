@@ -7,7 +7,6 @@ public class Computadora {
     private int consumoEnCPU;
 
 
-
     public IComputadora getState() {
         return state;
     }
